@@ -1,0 +1,10 @@
+export type Topic = { id: number; title: string; category: string; mastery: number };
+export type DashboardData = { readiness: number; topics: Topic[] };
+export type LearningModule = { category: string; description: string; mastery: number; status: string; featuredSessionSlug: string | null };
+export type LearningPath = { title: string; modules: LearningModule[] };
+export type Section = { id: string; title: string; summary: string; bullets: string[]; interviewTip: string };
+export type Option = { id: string; label: string };
+export type Question = { id: string; prompt: string; difficulty: string; options: Option[] };
+export type StudySession = { slug: string; category: string; title: string; subtitle: string; estimatedMinutes: number; mastery: number; sections: Section[]; questions: Question[] };
+export type QuestionResult = { questionId: string; correct: boolean; correctOptionId: string; explanation: string };
+export type StudySessionResult = { score: number; correct: number; total: number; previousMastery: number; newMastery: number; message: string; results: QuestionResult[] };
